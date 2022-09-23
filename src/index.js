@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from "react-router-dom";
+
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
+
+const script = document.createElement("script");
+script.src = "https://unpkg.com/datetime-slot-picker/dist/datetime-slot-picker/datetime-slot-picker.js";
+script.async = true;
+document.body.appendChild(script);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App /> 
+    </BrowserRouter>
   </React.StrictMode>
 );
 
